@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:SalvadoreXAndroid.ViewModels"
+             x:Class="SalvadoreXAndroid.Views.InventoryPage"
+             Title="Inventario"
+             BackgroundColor="#F8FAFC">
+
+    <Grid RowDefinitions="Auto,*" Padding="10">
+        
+        <!-- Header -->
+        <Grid Grid.Row="0" ColumnDefinitions="*,Auto" Margin="0,0,0,10">
+            <SearchBar Grid.Column="0" 
+                       Placeholder="Buscar producto..."
+                       Text="{Binding SearchText}"
+                       BackgroundColor="White"/>
+            
+            <Button Grid.Column="1"
+                    Text="+ Nuevo"
+                    BackgroundColor="#22C55E"
+                    TextColor="White"
+                    CornerRadius="8"
+                    Margin="10,0,0,0"
+                    Command="{Binding AddProductCommand}"/>
+        </Grid>
+        
+        <!-- Products List -->
+        <CollectionView Grid.Row="1"
+                        ItemsSource="{Binding Products}"
+                        SelectionMode="None">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <SwipeView>
+                        <SwipeView.RightItems>
+                            <SwipeItems>
+                                <SwipeItem Text="Editar" 
+                                           BackgroundColor="#3B82F6"
+                                           Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodels:InventoryViewModel}}, Path=EditProductCommand}"
+                                           CommandParameter="{Binding .}"/>
+                                <SwipeItem Text="Eliminar" 
+                                           BackgroundColor="#EF4444"
+                                           Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodels:InventoryViewModel}}, Path=DeleteProductCommand}"
+                                           CommandParameter="{Binding .}"/>
+                            </SwipeItems>
+                        </SwipeView.RightItems>
+                        
+                        <Frame BackgroundColor="White" 
+                               Margin="0,5" 
+                               Padding="15"
+                               CornerRadius="10">
+                            <Grid ColumnDefinitions="*,Auto,Auto">
+                                <VerticalStackLayout Grid.Column="0">
+                                    <Label Text="{Binding Name}" 
+                                           FontSize="16" 
+                                           FontAttributes="Bold"/>
+                                    <Label Text="{Binding Sku, StringFormat='SKU: {0}'}" 
+                                           FontSize="12" 
+                                           TextColor="#6B7280"/>
+                                </VerticalStackLayout>
+                                
+                                <VerticalStackLayout Grid.Column="1" Margin="10,0">
+                                    <Label Text="{Binding Stock}" 
+                                           FontSize="18" 
+                                           FontAttributes="Bold"
+                                           HorizontalTextAlignment="Center"/>
+                                    <Label Text="Stock" 
+                                           FontSize="10" 
+                                           TextColor="#6B7280"
+                                           HorizontalTextAlignment="Center"/>
+                                </VerticalStackLayout>
+                                
+                                <Label Grid.Column="2"
+                                       Text="{Binding Price, StringFormat='${0:N2}'}" 
+                                       FontSize="18" 
+                                       FontAttributes="Bold"
+                                       TextColor="#3B82F6"
+                                       VerticalTextAlignment="Center"/>
+                            </Grid>
+                        </Frame>
+                    </SwipeView>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
+    
+</ContentPage>

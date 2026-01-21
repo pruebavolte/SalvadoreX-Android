@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:SalvadoreXAndroid.ViewModels"
+             x:Class="SalvadoreXAndroid.Views.POSPage"
+             Title="Punto de Venta"
+             BackgroundColor="#F8FAFC">
+
+    <Grid RowDefinitions="Auto,*,Auto" Padding="10">
+        
+        <!-- Search Bar -->
+        <SearchBar Grid.Row="0" 
+                   Placeholder="Buscar producto o escanear codigo..."
+                   Text="{Binding SearchText}"
+                   BackgroundColor="White"
+                   Margin="0,0,0,10"/>
+        
+        <!-- Products Grid -->
+        <ScrollView Grid.Row="1">
+            <FlexLayout BindableLayout.ItemsSource="{Binding Products}"
+                        Wrap="Wrap"
+                        JustifyContent="Start"
+                        AlignContent="Start"
+                        Direction="Row">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <Frame Padding="10" 
+                               Margin="5"
+                               BackgroundColor="White"
+                               CornerRadius="10"
+                               HasShadow="True"
+                               WidthRequest="150"
+                               HeightRequest="120">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodels:POSViewModel}}, Path=AddToCartCommand}"
+                                                      CommandParameter="{Binding .}"/>
+                            </Frame.GestureRecognizers>
+                            <VerticalStackLayout Spacing="5">
+                                <Label Text="{Binding Name}" 
+                                       FontSize="14" 
+                                       FontAttributes="Bold"
+                                       LineBreakMode="TailTruncation"
+                                       MaxLines="2"/>
+                                <Label Text="{Binding Price, StringFormat='${0:N2}'}" 
+                                       FontSize="18" 
+                                       TextColor="#3B82F6"
+                                       FontAttributes="Bold"/>
+                                <Label Text="{Binding Stock, StringFormat='Stock: {0}'}" 
+                                       FontSize="11" 
+                                       TextColor="#6B7280"/>
+                            </VerticalStackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </FlexLayout>
+        </ScrollView>
+        
+        <!-- Cart Summary -->
+        <Frame Grid.Row="2" 
+               BackgroundColor="#1E293B" 
+               CornerRadius="15"
+               Padding="15"
+               Margin="0,10,0,0">
+            <Grid ColumnDefinitions="*,Auto">
+                <VerticalStackLayout Grid.Column="0">
+                    <Label Text="{Binding CartCount, StringFormat='{0} productos'}" 
+                           TextColor="#94A3B8"/>
+                    <Label Text="{Binding CartTotal, StringFormat='Total: ${0:N2}'}" 
+                           FontSize="24" 
+                           FontAttributes="Bold"
+                           TextColor="White"/>
+                </VerticalStackLayout>
+                
+                <Button Grid.Column="1"
+                        Text="Cobrar"
+                        BackgroundColor="#22C55E"
+                        TextColor="White"
+                        FontAttributes="Bold"
+                        CornerRadius="10"
+                        Padding="20,10"
+                        Command="{Binding CheckoutCommand}"/>
+            </Grid>
+        </Frame>
+    </Grid>
+    
+</ContentPage>

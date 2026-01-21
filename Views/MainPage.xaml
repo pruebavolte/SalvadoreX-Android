@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SalvadoreXAndroid.Views.MainPage"
+             Title="SalvadoreX POS"
+             BackgroundColor="#F8FAFC">
+
+    <VerticalStackLayout Padding="30" Spacing="25" VerticalOptions="Center">
+        
+        <Label Text="SalvadoreX" 
+               FontSize="32" 
+               FontAttributes="Bold"
+               TextColor="#3B82F6"
+               HorizontalTextAlignment="Center"/>
+        
+        <Label Text="Sistema de Punto de Venta" 
+               FontSize="16" 
+               TextColor="#64748B"
+               HorizontalTextAlignment="Center"/>
+        
+        <BoxView HeightRequest="1" Color="#E2E8F0" Margin="0,20"/>
+        
+        <Button Text="Punto de Venta"
+                BackgroundColor="#3B82F6"
+                TextColor="White"
+                FontAttributes="Bold"
+                CornerRadius="10"
+                HeightRequest="50"
+                Clicked="OnPOSClicked"/>
+        
+        <Button Text="Inventario"
+                BackgroundColor="#22C55E"
+                TextColor="White"
+                FontAttributes="Bold"
+                CornerRadius="10"
+                HeightRequest="50"
+                Clicked="OnInventoryClicked"/>
+        
+        <Button Text="Clientes"
+                BackgroundColor="#8B5CF6"
+                TextColor="White"
+                FontAttributes="Bold"
+                CornerRadius="10"
+                HeightRequest="50"
+                Clicked="OnCustomersClicked"/>
+        
+        <Button Text="Ventas"
+                BackgroundColor="#F59E0B"
+                TextColor="White"
+                FontAttributes="Bold"
+                CornerRadius="10"
+                HeightRequest="50"
+                Clicked="OnSalesClicked"/>
+        
+    </VerticalStackLayout>
+    
+</ContentPage>

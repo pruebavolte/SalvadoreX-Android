@@ -1,0 +1,45 @@
+# Build results
+bin/
+obj/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Visual Studio
+.vs/
+*.csproj.user
+
+# Rider
+.idea/
+
+# macOS
+.DS_Store
+
+# Android specific
+*.apk
+*.aab
+*.dex
+*.class
+local.properties
+
+# NuGet
+packages/
+*.nupkg
+*.snupkg
+
+# Build artifacts
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+
+# Publish
+publish/

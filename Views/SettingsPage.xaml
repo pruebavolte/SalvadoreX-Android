@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SalvadoreXAndroid.Views.SettingsPage"
+             Title="Configuracion"
+             BackgroundColor="#F8FAFC">
+
+    <ScrollView Padding="15">
+        <VerticalStackLayout Spacing="15">
+            
+            <!-- Business Info -->
+            <Frame BackgroundColor="White" CornerRadius="15" Padding="15">
+                <VerticalStackLayout Spacing="10">
+                    <Label Text="Datos del Negocio" 
+                           FontSize="18" 
+                           FontAttributes="Bold"
+                           TextColor="#3B82F6"/>
+                    
+                    <Label Text="Nombre del Negocio"/>
+                    <Entry Text="{Binding BusinessName}" 
+                           Placeholder="Mi Negocio"/>
+                    
+                    <Label Text="Telefono"/>
+                    <Entry Text="{Binding BusinessPhone}" 
+                           Placeholder="(555) 123-4567"
+                           Keyboard="Telephone"/>
+                    
+                    <Label Text="Tasa de IVA (%)"/>
+                    <Entry Text="{Binding TaxRate}" 
+                           Placeholder="16"
+                           Keyboard="Numeric"/>
+                </VerticalStackLayout>
+            </Frame>
+            
+            <!-- Sync Section -->
+            <Frame BackgroundColor="White" CornerRadius="15" Padding="15">
+                <VerticalStackLayout Spacing="10">
+                    <Label Text="Sincronizacion" 
+                           FontSize="18" 
+                           FontAttributes="Bold"
+                           TextColor="#3B82F6"/>
+                    
+                    <HorizontalStackLayout Spacing="10">
+                        <BoxView WidthRequest="12" 
+                                 HeightRequest="12" 
+                                 CornerRadius="6"
+                                 Color="{Binding IsOnline, Converter={StaticResource BoolToColorConverter}}"/>
+                        <Label Text="{Binding SyncStatus}"/>
+                    </HorizontalStackLayout>
+                    
+                    <Button Text="Sincronizar Ahora"
+                            BackgroundColor="#22C55E"
+                            TextColor="White"
+                            CornerRadius="8"
+                            Command="{Binding SyncNowCommand}"/>
+                </VerticalStackLayout>
+            </Frame>
+            
+            <!-- Save Button -->
+            <Button Text="Guardar Configuracion"
+                    BackgroundColor="#3B82F6"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    CornerRadius="10"
+                    HeightRequest="50"
+                    Command="{Binding SaveCommand}"/>
+            
+            <!-- App Info -->
+            <Frame BackgroundColor="White" CornerRadius="15" Padding="15">
+                <VerticalStackLayout Spacing="5">
+                    <Label Text="SalvadoreX POS" FontAttributes="Bold"/>
+                    <Label Text="Version 1.0.0" TextColor="#6B7280"/>
+                    <Label Text="Sistema de Punto de Venta" TextColor="#94A3B8" FontSize="12"/>
+                </VerticalStackLayout>
+            </Frame>
+            
+        </VerticalStackLayout>
+    </ScrollView>
+    
+</ContentPage>

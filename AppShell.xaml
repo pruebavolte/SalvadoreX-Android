@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="SalvadoreXAndroid.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:views="clr-namespace:SalvadoreXAndroid.Views"
+    Shell.FlyoutBehavior="Flyout"
+    Shell.FlyoutBackgroundColor="#1E293B"
+    Title="SalvadoreX POS">
+
+    <Shell.FlyoutHeader>
+        <VerticalStackLayout Padding="20" BackgroundColor="#3B82F6">
+            <Label Text="SalvadoreX" 
+                   FontSize="24" 
+                   FontAttributes="Bold" 
+                   TextColor="White"/>
+            <Label Text="Sistema de Punto de Venta" 
+                   FontSize="12" 
+                   TextColor="#BFDBFE"/>
+        </VerticalStackLayout>
+    </Shell.FlyoutHeader>
+
+    <FlyoutItem Title="POS" Icon="{OnPlatform Default='cash_register.png'}">
+        <ShellContent ContentTemplate="{DataTemplate views:POSPage}" Route="POSPage"/>
+    </FlyoutItem>
+
+    <FlyoutItem Title="Inventario" Icon="{OnPlatform Default='inventory.png'}">
+        <ShellContent ContentTemplate="{DataTemplate views:InventoryPage}" Route="InventoryPage"/>
+    </FlyoutItem>
+
+    <FlyoutItem Title="Clientes" Icon="{OnPlatform Default='customers.png'}">
+        <ShellContent ContentTemplate="{DataTemplate views:CustomersPage}" Route="CustomersPage"/>
+    </FlyoutItem>
+
+    <FlyoutItem Title="Ventas" Icon="{OnPlatform Default='sales.png'}">
+        <ShellContent ContentTemplate="{DataTemplate views:SalesPage}" Route="SalesPage"/>
+    </FlyoutItem>
+
+    <FlyoutItem Title="Configuracion" Icon="{OnPlatform Default='settings.png'}">
+        <ShellContent ContentTemplate="{DataTemplate views:SettingsPage}" Route="SettingsPage"/>
+    </FlyoutItem>
+
+</Shell>

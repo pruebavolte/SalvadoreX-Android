@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:SalvadoreXAndroid.ViewModels"
+             x:Class="SalvadoreXAndroid.Views.SalesPage"
+             Title="Historial de Ventas"
+             BackgroundColor="#F8FAFC">
+
+    <Grid RowDefinitions="Auto,*" Padding="10">
+        
+        <!-- Summary -->
+        <Frame Grid.Row="0" 
+               BackgroundColor="#1E293B" 
+               CornerRadius="15"
+               Padding="15"
+               Margin="0,0,0,10">
+            <Grid ColumnDefinitions="*,*">
+                <VerticalStackLayout Grid.Column="0">
+                    <Label Text="Total Ventas" TextColor="#94A3B8" FontSize="12"/>
+                    <Label Text="{Binding SalesCount}" 
+                           TextColor="White" 
+                           FontSize="24" 
+                           FontAttributes="Bold"/>
+                </VerticalStackLayout>
+                <VerticalStackLayout Grid.Column="1" HorizontalOptions="End">
+                    <Label Text="Ingresos" TextColor="#94A3B8" FontSize="12"/>
+                    <Label Text="{Binding TotalSales, StringFormat='${0:N2}'}" 
+                           TextColor="#22C55E" 
+                           FontSize="24" 
+                           FontAttributes="Bold"/>
+                </VerticalStackLayout>
+            </Grid>
+        </Frame>
+        
+        <!-- Sales List -->
+        <CollectionView Grid.Row="1"
+                        ItemsSource="{Binding Sales}"
+                        SelectionMode="None">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame BackgroundColor="White" 
+                           Margin="0,5" 
+                           Padding="15"
+                           CornerRadius="10">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodels:SalesViewModel}}, Path=ViewSaleCommand}"
+                                                  CommandParameter="{Binding .}"/>
+                        </Frame.GestureRecognizers>
+                        
+                        <Grid ColumnDefinitions="*,Auto">
+                            <VerticalStackLayout Grid.Column="0">
+                                <Label Text="{Binding ReceiptNumber}" 
+                                       FontSize="14" 
+                                       FontAttributes="Bold"/>
+                                <Label Text="{Binding CreatedAt, StringFormat='{0}'}" 
+                                       FontSize="12" 
+                                       TextColor="#6B7280"/>
+                                <Label Text="{Binding PaymentMethod}" 
+                                       FontSize="11" 
+                                       TextColor="#94A3B8"/>
+                            </VerticalStackLayout>
+                            
+                            <Label Grid.Column="1"
+                                   Text="{Binding Total, StringFormat='${0:N2}'}" 
+                                   FontSize="18" 
+                                   FontAttributes="Bold"
+                                   TextColor="#22C55E"
+                                   VerticalTextAlignment="Center"/>
+                        </Grid>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
+    
+</ContentPage>
