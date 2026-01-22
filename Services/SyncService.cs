@@ -1,3 +1,4 @@
+using System.Net.Http.Json;
 using Newtonsoft.Json;
 
 namespace SalvadoreXPOS.Services;
@@ -30,9 +31,9 @@ public class SyncService
         _cts?.Cancel();
     }
 
-    private async Task BackgroundSyncLoop(CancellationToken ct)
+    private async Task BackgroundSyncLoop(CancellationToken cancellationToken)
     {
-        while (!ct.IsCancellationRequested)
+        while (!cancellationToken.IsCancellationRequested)
         {
             try
             {
@@ -40,12 +41,20 @@ public class SyncService
                 
                 if (IsOnline)
                 {
+                    StatusChanged?.Invoke(this, "• En línea");
                     await SyncPendingChangesAsync();
                 }
+                else
+                {
+                    StatusChanged?.Invoke(this, "• Sin conexión (modo offline)");
+                }
             }
-            catch { }
+            catch (Exception ex)
+            {
+                StatusChanged?.Invoke(this, $"• Error: {ex.Message}");
+            }
 
-            await Task.Delay(TimeSpan.FromSeconds(_syncIntervalSeconds), ct);
+            await Task.Delay(TimeSpan.FromSeconds(_syncIntervalSeconds), cancellationToken);
         }
     }
 
@@ -68,6 +77,7 @@ public class SyncService
         if (IsSyncing || !IsOnline) return;
         
         IsSyncing = true;
+        StatusChanged?.Invoke(this, "• Sincronizando...");
 
         try
         {
@@ -75,44 +85,128 @@ public class SyncService
             var supabaseKey = await _db.GetSettingAsync("supabase_key");
             
             if (string.IsNullOrEmpty(supabaseUrl) || string.IsNullOrEmpty(supabaseKey))
+            {
+                StatusChanged?.Invoke(this, "• Configuración de sync pendiente");
                 return;
+            }
 
             using var client = new HttpClient();
             client.DefaultRequestHeaders.Add("apikey", supabaseKey);
             client.DefaultRequestHeaders.Add("Authorization", $"Bearer {supabaseKey}");
             client.DefaultRequestHeaders.Add("Prefer", "resolution=merge-duplicates");
 
+            int syncedCount = 0;
+            int errorCount = 0;
+
+            // Sync products
             var pendingProducts = await _db.GetPendingSyncProductsAsync();
             foreach (var product in pendingProducts)
             {
                 try
                 {
+                    product.Remove("need_sync");
                     var json = JsonConvert.SerializeObject(product);
                     var content = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
                     var response = await client.PostAsync($"{supabaseUrl}/rest/v1/products", content);
+                    
                     if (response.IsSuccessStatusCode)
-                        await _db.MarkProductSyncedAsync(product.Id);
+                    {
+                        await _db.MarkProductSyncedAsync(product["id"]?.ToString()!);
+                        syncedCount++;
+                    }
+                    else
+                    {
+                        errorCount++;
+                        var errorBody = await response.Content.ReadAsStringAsync();
+                        StatusChanged?.Invoke(this, $"• Error producto: {errorBody.Substring(0, Math.Min(50, errorBody.Length))}");
+                    }
                 }
-                catch { }
+                catch (Exception ex) 
+                { 
+                    errorCount++;
+                    StatusChanged?.Invoke(this, $"• Error: {ex.Message}");
+                }
             }
 
+            // Sync sales
             var pendingSales = await _db.GetPendingSyncSalesAsync();
             foreach (var sale in pendingSales)
             {
                 try
                 {
+                    sale.Remove("need_sync");
                     var json = JsonConvert.SerializeObject(sale);
                     var content = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
                     var response = await client.PostAsync($"{supabaseUrl}/rest/v1/sales", content);
+                    
                     if (response.IsSuccessStatusCode)
-                        await _db.MarkSaleSyncedAsync(sale.Id);
+                    {
+                        await _db.MarkSaleSyncedAsync(sale["id"]?.ToString()!);
+                        syncedCount++;
+                    }
+                    else
+                    {
+                        errorCount++;
+                    }
                 }
-                catch { }
+                catch 
+                { 
+                    errorCount++;
+                }
+            }
+
+            // Sync customers
+            var pendingCustomers = await _db.GetPendingSyncCustomersAsync();
+            foreach (var customer in pendingCustomers)
+            {
+                try
+                {
+                    customer.Remove("need_sync");
+                    var json = JsonConvert.SerializeObject(customer);
+                    var content = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
+                    var response = await client.PostAsync($"{supabaseUrl}/rest/v1/customers", content);
+                    
+                    if (response.IsSuccessStatusCode)
+                    {
+                        await _db.MarkCustomerSyncedAsync(customer["id"]?.ToString()!);
+                        syncedCount++;
+                    }
+                }
+                catch { errorCount++; }
+            }
+
+            // Sync categories
+            var pendingCategories = await _db.GetPendingSyncCategoriesAsync();
+            foreach (var category in pendingCategories)
+            {
+                try
+                {
+                    category.Remove("need_sync");
+                    var json = JsonConvert.SerializeObject(category);
+                    var content = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
+                    var response = await client.PostAsync($"{supabaseUrl}/rest/v1/categories", content);
+                    
+                    if (response.IsSuccessStatusCode)
+                    {
+                        await _db.MarkCategorySyncedAsync(category["id"]?.ToString()!);
+                        syncedCount++;
+                    }
+                }
+                catch { errorCount++; }
             }
 
             LastSyncTime = DateTime.Now;
+            var statusMessage = syncedCount > 0 
+                ? $"• Sincronizado ({syncedCount} cambios) - {LastSyncTime:HH:mm}" 
+                : $"• En línea - {LastSyncTime:HH:mm}";
+            if (errorCount > 0)
+                statusMessage += $" ({errorCount} errores)";
+            StatusChanged?.Invoke(this, statusMessage);
         }
-        catch { }
+        catch (Exception ex)
+        {
+            StatusChanged?.Invoke(this, $"• Error sync: {ex.Message}");
+        }
         finally
         {
             IsSyncing = false;
@@ -120,4 +214,17 @@ public class SyncService
     }
 
     public Task ForceSyncNowAsync() => SyncPendingChangesAsync();
+    
+    public async Task SyncNowAsync()
+    {
+        IsOnline = await CheckInternetAsync();
+        if (IsOnline)
+        {
+            await SyncPendingChangesAsync();
+        }
+        else
+        {
+            StatusChanged?.Invoke(this, "• Sin conexión (no se puede sincronizar)");
+        }
+    }
 }
