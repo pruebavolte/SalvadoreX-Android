@@ -2,7 +2,7 @@ using System.Diagnostics;
 using System.Net.Http;
 using System.Text.Json;
 
-namespace SalvadoreXPOS.Services;
+namespace SalvadoreXAndroid.Services;
 
 public class UpdateService
 {

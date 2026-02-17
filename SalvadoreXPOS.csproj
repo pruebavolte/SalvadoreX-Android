@@ -20,7 +20,33 @@
 
   <ItemGroup>
     <AndroidAsset Include="Assets\**\*" />
-    <AndroidResource Include="Resources\**\*" />
+    <AndroidResource Include="Resources\**\*.png" />
+    <AndroidResource Include="Resources\**\*.jpg" />
+    <AndroidResource Include="Resources\**\*.jpeg" />
+    <AndroidResource Include="Resources\**\*.xml" />
+    <AndroidResource Include="Resources\**\*.axml" />
+    <AndroidResource Include="Resources\**\*.aspx" />
+    <AndroidResource Include="Resources\**\*.txt" />
+    <AndroidResource Include="Resources\**\*.ttf" />
+    <AndroidResource Include="Resources\**\*.otf" />
+    <AndroidResource Include="Resources\**\*.woff" />
+    <AndroidResource Include="Resources\**\*.woff2" />
+    <AndroidResource Include="Resources\**\*.json" />
+    <AndroidResource Include="Resources\**\*.html" />
+    <AndroidResource Include="Resources\**\*.css" />
+    <AndroidResource Include="Resources\**\*.js" />
+    <AndroidResource Include="Resources\**\*.resx" />
+    <AndroidResource Include="Resources\**\*.axml" />
+    <AndroidResource Include="Resources\**\*.drawable" />
+    <AndroidResource Include="Resources\**\*.layout" />
+    <AndroidResource Include="Resources\**\*.values" />
+    <AndroidResource Include="Resources\**\*.raw" />
+    <AndroidResource Include="Resources\**\*.xml" />
+    <AndroidResource Remove="Resources\**\*.xaml" />
+    <AndroidResource Remove="Resources\**\*.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="**\*.xaml" />
   </ItemGroup>
 
 </Project>

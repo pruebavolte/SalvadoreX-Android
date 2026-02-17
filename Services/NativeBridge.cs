@@ -1,6 +1,6 @@
 using System.Runtime.InteropServices;
 
-namespace SalvadoreXPOS.Services;
+namespace SalvadoreXAndroid.Services;
 
 [ClassInterface(ClassInterfaceType.AutoDual)]
 [ComVisible(true)]

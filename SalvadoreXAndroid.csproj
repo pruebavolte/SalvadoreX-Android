@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net8.0-android</TargetFrameworks>
+    <TargetFrameworks>net9.0-android</TargetFrameworks>
     <OutputType>Exe</OutputType>
     <RootNamespace>SalvadoreXAndroid</RootNamespace>
     <UseMaui>true</UseMaui>
@@ -24,11 +24,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Reference Include="Mono.Android.Export">
+      <HintPath>C:\Program Files\dotnet\packs\Microsoft.Android.Ref.35\35.0.105\ref\net9.0\Mono.Android.Export.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
     <!-- App Icon -->
-    <MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#3B82F6" />
+    <MauiIcon Include="Resources\AppIcon\aappicon.png" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#3B82F6" />
 
     <!-- Splash Screen -->
-    <MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#3B82F6" BaseSize="128,128" />
 
     <!-- Images -->
     <MauiImage Include="Resources\Images\*" />
@@ -38,16 +43,24 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.Data.Sqlite" Version="10.0.3" />
     <PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
     <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.1" />
     <PackageReference Include="sqlite-net-pcl" Version="1.8.116" />
     <PackageReference Include="SQLitePCLRaw.bundle_green" Version="2.1.6" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="System.Management" Version="10.0.3" />
   </ItemGroup>
 
   <ItemGroup>
     <MauiAsset Include="Resources\Raw\*" LogicalName="%(Filename)%(Extension)" />
   </ItemGroup>
 
+  <ItemGroup>
+    <MauiXaml Include="Resources\Styles\**" />
+    <AndroidResource Remove="Resources\Styles\**" />
+  </ItemGroup>
+
 </Project>
+

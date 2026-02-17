@@ -15,7 +15,7 @@ namespace SalvadoreXPOS;
     ScreenOrientation = ScreenOrientation.Portrait)]
 public class MainActivity : Activity
 {
-    private WebView? _webView;
+    private Android.Webkit.WebView? _webView;
     private DatabaseService? _db;
     private SyncService? _sync;
     private LicensingService? _licensing;

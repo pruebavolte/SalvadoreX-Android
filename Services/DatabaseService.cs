@@ -1,7 +1,7 @@
 using Microsoft.Data.Sqlite;
 using Newtonsoft.Json;
 
-namespace SalvadoreXPOS.Services;
+namespace SalvadoreXAndroid.Services;
 
 public class DatabaseService
 {

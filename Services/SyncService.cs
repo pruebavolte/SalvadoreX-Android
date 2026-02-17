@@ -1,7 +1,7 @@
 using System.Net.Http.Json;
 using Newtonsoft.Json;
 
-namespace SalvadoreXPOS.Services;
+namespace SalvadoreXAndroid.Services;
 
 public class SyncService
 {

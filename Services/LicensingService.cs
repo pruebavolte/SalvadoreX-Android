@@ -3,7 +3,7 @@ using System.Security.Cryptography;
 using System.Text;
 using Microsoft.Data.Sqlite;
 
-namespace SalvadoreXPOS.Services;
+namespace SalvadoreXAndroid.Services;
 
 public class LicensingService
 {
