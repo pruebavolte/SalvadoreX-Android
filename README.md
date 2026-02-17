@@ -1,63 +1,50 @@
-# SalvadoreX POS - Android
+# SalvadoreX POS - Aplicación Android
 
-Aplicación móvil para Android con WebView.
+Aplicación nativa Android que envuelve la aplicación web SalvadoreX POS en un WebView con soporte para impresoras Bluetooth.
 
 ## Requisitos
 
-- Android 7.0 (API 24) o superior
-- 50 MB de espacio libre
+- Android Studio Arctic Fox o superior
+- Android SDK 34
+- Android 8.0+ (API 26) en el dispositivo
 
-## Compilación
+## Compilar el APK
 
+### Opción 1: Android Studio
+1. Abre este directorio en Android Studio
+2. Espera a que Gradle sincronice las dependencias
+3. Ve a **Build > Build Bundle / APK > Build APK**
+4. El APK se genera en: `app/build/outputs/apk/debug/app-debug.apk`
+
+### Opción 2: Línea de comandos
 ```bash
-# Compilar APK Release
-dotnet publish -f net8.0-android -c Release
+./gradlew assembleDebug
+```
+El APK se genera en: `app/build/outputs/apk/debug/app-debug.apk`
 
-# El APK estará en:
-# bin/Release/net8.0-android/publish/com.salvadorex.pos-Signed.apk
+### APK de Release (firmado)
+```bash
+./gradlew assembleRelease
+```
+Necesitarás configurar un keystore de firma en `app/build.gradle.kts`.
+
+## Cambiar la URL de la aplicación web
+
+Edita `app/build.gradle.kts` y modifica el valor de `WEB_APP_URL`:
+
+```kotlin
+buildConfigField("String", "WEB_APP_URL", "\"https://tu-url-aqui.com\"")
 ```
 
-## Estructura
+## Funcionalidades nativas
 
-```
-├── WebApp/           # Interfaz web embebida
-│   ├── index.html
-│   ├── app.js
-│   └── version.txt
-├── Assets/
-│   └── webapp/       # Copia de WebApp para Android
-├── Services/         # Servicios nativos C#
-│   ├── DatabaseService.cs
-│   ├── SyncService.cs
-│   ├── UpdateService.cs
-│   ├── LicensingService.cs
-│   └── NativeBridge.cs
-├── MainActivity.cs   # Actividad con WebView
-├── AndroidManifest.xml
-└── SalvadoreXPOS.csproj
-```
+- **Impresión Bluetooth**: Escanea, conecta e imprime en impresoras térmicas Bluetooth
+- **Detección automática**: La app web detecta automáticamente que está en Android
+- **Permisos en tiempo real**: Solicita permisos de Bluetooth cuando se necesitan
 
-## Actualizar WebApp
+## Permisos requeridos
 
-Para actualizar la interfaz desde el repositorio web principal:
-
-1. Descargar `index.html` y `app.js` actualizados
-2. Reemplazar en `WebApp/` Y en `Assets/webapp/`
-3. Recompilar
-
-## Características
-
-- Offline-first con SQLite local
-- Sincronización automática con Supabase
-- Licenciamiento por hardware (Android ID)
-- Interfaz idéntica a Windows y Web
-
-## Instalación
-
-1. Habilitar "Orígenes desconocidos" en Configuración > Seguridad
-2. Instalar el APK
-3. Conceder permisos solicitados
-
-## Licencia
-
-Copyright © 2025 SalvadoreX
+- `INTERNET` - Acceso a la aplicación web
+- `BLUETOOTH` / `BLUETOOTH_ADMIN` - Gestión de Bluetooth (Android < 12)
+- `BLUETOOTH_SCAN` / `BLUETOOTH_CONNECT` - Bluetooth (Android 12+)
+- `ACCESS_FINE_LOCATION` - Requerido para escaneo Bluetooth
