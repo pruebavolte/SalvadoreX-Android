@@ -40,6 +40,8 @@ class MainActivity : AppCompatActivity() {
         val allGranted = permissions.values.all { it }
         if (allGranted) {
             webAppInterface.onPermissionsGranted()
+        } else {
+            webAppInterface.onPermissionsDenied()
         }
     }
 
