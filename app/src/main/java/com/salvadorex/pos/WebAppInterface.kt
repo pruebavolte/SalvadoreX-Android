@@ -12,6 +12,13 @@ class WebAppInterface(private val activity: MainActivity) {
     @get:JavascriptInterface
     val isAndroidApp: Boolean = true
 
+    fun onPermissionsDenied() {
+        val message = JSONObject().apply {
+            put("type", "bluetoothPermissionDenied")
+        }
+        postMessageToWebView(message.toString())
+    }
+
     @JavascriptInterface
     fun scanBluetoothPrinters() {
         if (!activity.hasBluetoothPermissions()) {
