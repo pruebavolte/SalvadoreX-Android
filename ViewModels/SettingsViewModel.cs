@@ -6,7 +6,7 @@ namespace SalvadoreXAndroid.ViewModels
 {
     public class SettingsViewModel : BaseViewModel
     {
-        private readonly DatabaseService _db;
+        private readonly SalvadoreXAndroid.Data.DatabaseService _db;
         private readonly SyncService _sync;
 
         private string _businessName = string.Empty;
@@ -47,7 +47,7 @@ namespace SalvadoreXAndroid.ViewModels
         public ICommand SaveCommand { get; }
         public ICommand SyncNowCommand { get; }
 
-        public SettingsViewModel(DatabaseService db, SyncService sync)
+        public SettingsViewModel(SalvadoreXAndroid.Data.DatabaseService db, SyncService sync)
         {
             _db = db;
             _sync = sync;

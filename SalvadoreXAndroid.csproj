@@ -21,6 +21,21 @@
     <ApplicationVersion>1</ApplicationVersion>
 
     <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">24.0</SupportedOSPlatformVersion>
+    <PublishTrimmed>false</PublishTrimmed>
+    <AndroidPackageFormat>apk</AndroidPackageFormat>
+    <AndroidCreatePackage>true</AndroidCreatePackage>
+    <RunAOTCompilation>false</RunAOTCompilation>
+    <AndroidBundleAssemblies>true</AndroidBundleAssemblies>
+    <AndroidEnableAssemblyCompression>false</AndroidEnableAssemblyCompression>
+    <AndroidUseAssemblyStore>true</AndroidUseAssemblyStore>
+    <AndroidLinkMode>None</AndroidLinkMode>
+  </PropertyGroup>
+
+  <!-- Disable linking for Release builds -->
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'">
+    <AndroidLinkMode>None</AndroidLinkMode>
+    <PublishTrimmed>false</PublishTrimmed>
+    <RunAOTCompilation>false</RunAOTCompilation>
   </PropertyGroup>
 
   <ItemGroup>
@@ -54,13 +69,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <MauiAsset Include="Resources\Raw\*" LogicalName="%(Filename)%(Extension)" />
+    <MauiAsset Include="Resources\Raw\**\*" />
   </ItemGroup>
 
   <ItemGroup>
-    <MauiXaml Include="Resources\Styles\**" />
+    <AndroidResource Remove="Resources\Styles\Colors.xaml" />
+    <AndroidResource Remove="Resources\Styles\Styles.xaml" />
     <AndroidResource Remove="Resources\Styles\**" />
   </ItemGroup>
 
 </Project>
-

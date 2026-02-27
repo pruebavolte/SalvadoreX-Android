@@ -1,0 +1,385 @@
+﻿26:                              ForegroundFile = Resources\AppIcon\appiconfg.svg
+27:                              Color = #3B82F6
+28:                      MauiXaml
+29: >                        Resources\Styles\Colors2.xaml
+30: >                        Resources\Styles\Styles2.xaml
+31:                      PackageReference
+---
+60:                              ForegroundFile = Resources\AppIcon\appiconfg.svg
+61:                              Color = #3B82F6
+62:                      MauiXaml
+63: >                        Resources\Styles\Colors2.xaml
+64: >                        Resources\Styles\Styles2.xaml
+65:                      PackageReference
+---
+119:                              ForegroundFile = Resources\AppIcon\appiconfg.svg
+120:                              Color = #3B82F6
+121:                      MauiXaml
+122: >                        Resources\Styles\Colors2.xaml
+123: >                        Resources\Styles\Styles2.xaml
+124:                      PackageReference
+---
+153:                              ForegroundFile = Resources\AppIcon\appiconfg.svg
+154:                              Color = #3B82F6
+155:                      MauiXaml
+156: >                        Resources\Styles\Colors2.xaml
+157: >                        Resources\Styles\Styles2.xaml
+158:                      PackageReference
+---
+187:                              ForegroundFile = Resources\AppIcon\appiconfg.svg
+188:                              Color = #3B82F6
+189:                      MauiXaml
+190: >                        Resources\Styles\Colors2.xaml
+191: >                        Resources\Styles\Styles2.xaml
+192:                      PackageReference
+---
+299:                              ForegroundFile = Resources\AppIcon\appiconfg.svg
+300:                              Color = #3B82F6
+301:                      MauiXaml
+302: >                        Resources\Styles\Colors2.xaml
+303: >                        Resources\Styles\Styles2.xaml
+304:                      MonoAotCrossCompiler
+---
+313:                          Resources\AppIcon\aappicon.png
+314:                          Resources\AppIcon\appiconfg.svg
+315:                          Resources\splash\appicon.svg
+316: >                        Resources\Styles\Colors2.xaml
+317: >                        Resources\Styles\Styles2.xaml
+318:                          SalvadoreXAndroid.csproj.SdkResolver.48470621.proj.Backup.tmp
+---
+378:                              ForegroundFile = Resources\AppIcon\appiconfg.svg
+379:                              Color = #3B82F6
+380:                      MauiXaml
+381: >                        Resources\Styles\Colors2.xaml
+382: >                        Resources\Styles\Styles2.xaml
+383:                      MonoAotCrossCompiler
+---
+392:                          Resources\AppIcon\aappicon.png
+393:                          Resources\AppIcon\appiconfg.svg
+394:                          Resources\splash\appicon.svg
+395: >                        Resources\Styles\Colors2.xaml
+396: >                        Resources\Styles\Styles2.xaml
+397:                          SalvadoreXAndroid.csproj.SdkResolver.48470621.proj.Backup.tmp
+---
+485:                              ForegroundFile = Resources\AppIcon\appiconfg.svg
+486:                              Color = #3B82F6
+487:                      MauiXaml
+488: >                        Resources\Styles\Colors2.xaml
+489: >                        Resources\Styles\Styles2.xaml
+490:                      PackageReference
+---
+550:                              ForegroundFile = Resources\AppIcon\appiconfg.svg
+551:                              Color = #3B82F6
+552:                      MauiXaml
+553: >                        Resources\Styles\Colors2.xaml
+554: >                        Resources\Styles\Styles2.xaml
+555:                      MonoAotCrossCompiler
+---
+564:                          Resources\AppIcon\aappicon.png
+565:                          Resources\AppIcon\appiconfg.svg
+566:                          Resources\splash\appicon.svg
+567: >                        Resources\Styles\Colors2.xaml
+568: >                        Resources\Styles\Styles2.xaml
+569:                          SalvadoreXAndroid.csproj.SdkResolver.48470621.proj.Backup.tmp
+---
+598:                              ForegroundFile = Resources\AppIcon\appiconfg.svg
+599:                              Color = #3B82F6
+600:                      MauiXaml
+601: >                        Resources\Styles\Colors2.xaml
+602: >                        Resources\Styles\Styles2.xaml
+603:                      PackageReference
+---
+663:                              ForegroundFile = Resources\AppIcon\appiconfg.svg
+664:                              Color = #3B82F6
+665:                      MauiXaml
+666: >                        Resources\Styles\Colors2.xaml
+667: >                        Resources\Styles\Styles2.xaml
+668:                      MonoAotCrossCompiler
+---
+677:                          Resources\AppIcon\aappicon.png
+678:                          Resources\AppIcon\appiconfg.svg
+679:                          Resources\splash\appicon.svg
+680: >                        Resources\Styles\Colors2.xaml
+681: >                        Resources\Styles\Styles2.xaml
+682:                          SalvadoreXAndroid.csproj.SdkResolver.48470621.proj.Backup.tmp
+---
+742:                              ForegroundFile = Resources\AppIcon\appiconfg.svg
+743:                              Color = #3B82F6
+744:                      MauiXaml
+745: >                        Resources\Styles\Colors2.xaml
+746: >                        Resources\Styles\Styles2.xaml
+747:                      MonoAotCrossCompiler
+---
+756:                          Resources\AppIcon\aappicon.png
+757:                          Resources\AppIcon\appiconfg.svg
+758:                          Resources\splash\appicon.svg
+759: >                        Resources\Styles\Colors2.xaml
+760: >                        Resources\Styles\Styles2.xaml
+761:                          SalvadoreXAndroid.csproj.SdkResolver.48470621.proj.Backup.tmp
+---
+959:                              ForegroundFile = Resources\AppIcon\appiconfg.svg
+960:                              Color = #3B82F6
+961:                      MauiXaml
+962: >                        Resources\Styles\Colors2.xaml
+963: >                        Resources\Styles\Styles2.xaml
+964:                      PackageReference
+---
+993:                              ForegroundFile = Resources\AppIcon\appiconfg.svg
+994:                              Color = #3B82F6
+995:                      MauiXaml
+996: >                        Resources\Styles\Colors2.xaml
+997: >                        Resources\Styles\Styles2.xaml
+998:                      PackageReference
+---
+1096:                              SubType = Designer
+1097:                          AppShell.xaml
+1098:                              SubType = Designer
+1099: >                        Resources\Styles\Colors2.xaml
+1100:                              SubType = Designer
+1101: >                        Resources\Styles\Colors2.xaml
+---
+1098:                              SubType = Designer
+1099: >                        Resources\Styles\Colors2.xaml
+1100:                              SubType = Designer
+1101: >                        Resources\Styles\Colors2.xaml
+1102:                              SubType = Designer
+1103: >                        Resources\Styles\Styles2.xaml
+---
+1193:                              SubType = Designer
+1194:                          AppShell.xaml
+1195:                              SubType = Designer
+1196: >                        Resources\Styles\Colors2.xaml
+1197:                              SubType = Designer
+1198: >                        Resources\Styles\Colors2.xaml
+---
+1195:                              SubType = Designer
+1196: >                        Resources\Styles\Colors2.xaml
+1197:                              SubType = Designer
+1198: >                        Resources\Styles\Colors2.xaml
+1199:                              SubType = Designer
+1200: >                        Resources\Styles\Styles2.xaml
+---
+1377:                                      SubType=Designer
+1378:                              AppShell.xaml
+1379:                                      SubType=Designer
+1380: >                            Resources\Styles\Colors2.xaml
+1381:                                      SubType=Designer
+1382: >                            Resources\Styles\Styles2.xaml
+---
+1390:                                      SubType=Designer
+1391:                              Views\SettingsPage.xaml
+1392:                                      SubType=Designer
+1393: >                            Resources\Styles\Colors2.xaml
+1394:                                      SubType=Designer
+1395: >                            Resources\Styles\Styles2.xaml
+---
+1408:                                        SubType=Designer
+1409:                                AppShell.xaml
+1410:                                        SubType=Designer
+1411: >                              Resources\Styles\Colors2.xaml
+1412:                                        SubType=Designer
+1413: >                              Resources\Styles\Styles2.xaml
+---
+1421:                                        SubType=Designer
+1422:                                Views\SettingsPage.xaml
+1423:                                        SubType=Designer
+1424: >                              Resources\Styles\Colors2.xaml
+1425:                                        SubType=Designer
+1426: >                              Resources\Styles\Styles2.xaml
+---
+1434:                                        OriginalItemSpec=AppShell.xaml
+1435:                                        SubType=Designer
+1436:                                        TargetPath=AppShell.xaml
+1437: >                              Resources\Styles\Colors2.xaml
+1438: >                                      OriginalItemSpec=Resources\Styles\Colors2.xaml
+1439:                                        SubType=Designer
+---
+1435:                                        SubType=Designer
+1436:                                        TargetPath=AppShell.xaml
+1437: >                              Resources\Styles\Colors2.xaml
+1438: >                                      OriginalItemSpec=Resources\Styles\Colors2.xaml
+1439:                                        SubType=Designer
+1440: >                                      TargetPath=Resources\Styles\Colors2.xaml
+---
+1437: >                              Resources\Styles\Colors2.xaml
+1438: >                                      OriginalItemSpec=Resources\Styles\Colors2.xaml
+1439:                                        SubType=Designer
+1440: >                                      TargetPath=Resources\Styles\Colors2.xaml
+1441: >                              Resources\Styles\Styles2.xaml
+1442: >                                      OriginalItemSpec=Resources\Styles\Styles2.xaml
+---
+1452:                                        OriginalItemSpec=Views\SettingsPage.xaml
+1453:                                        SubType=Designer
+1454:                                        TargetPath=Views\SettingsPage.xaml
+1455: >                              Resources\Styles\Colors2.xaml
+1456: >                                      OriginalItemSpec=Resources\Styles\Colors2.xaml
+1457:                                        SubType=Designer
+---
+1453:                                        SubType=Designer
+1454:                                        TargetPath=Views\SettingsPage.xaml
+1455: >                              Resources\Styles\Colors2.xaml
+1456: >                                      OriginalItemSpec=Resources\Styles\Colors2.xaml
+1457:                                        SubType=Designer
+1458: >                                      TargetPath=Resources\Styles\Colors2.xaml
+---
+1455: >                              Resources\Styles\Colors2.xaml
+1456: >                                      OriginalItemSpec=Resources\Styles\Colors2.xaml
+1457:                                        SubType=Designer
+1458: >                                      TargetPath=Resources\Styles\Colors2.xaml
+1459: >                              Resources\Styles\Styles2.xaml
+1460: >                                      OriginalItemSpec=Resources\Styles\Styles2.xaml
+---
+1467:                                      SubType=Designer
+1468:                              AppShell.xaml
+1469:                                      SubType=Designer
+1470: >                            Resources\Styles\Colors2.xaml
+1471:                                      SubType=Designer
+1472: >                            Resources\Styles\Styles2.xaml
+---
+1480:                                      SubType=Designer
+1481:                              Views\SettingsPage.xaml
+1482:                                      SubType=Designer
+1483: >                            Resources\Styles\Colors2.xaml
+1484:                                      SubType=Designer
+1485: >                            Resources\Styles\Styles2.xaml
+---
+1493:                                      OriginalItemSpec=AppShell.xaml
+1494:                                      SubType=Designer
+1495:                                      TargetPath=AppShell.xaml
+1496: >                            Resources\Styles\Colors2.xaml
+1497: >                                    OriginalItemSpec=Resources\Styles\Colors2.xaml
+1498:                                      SubType=Designer
+---
+1494:                                      SubType=Designer
+1495:                                      TargetPath=AppShell.xaml
+1496: >                            Resources\Styles\Colors2.xaml
+1497: >                                    OriginalItemSpec=Resources\Styles\Colors2.xaml
+1498:                                      SubType=Designer
+1499: >                                    TargetPath=Resources\Styles\Colors2.xaml
+---
+1496: >                            Resources\Styles\Colors2.xaml
+1497: >                                    OriginalItemSpec=Resources\Styles\Colors2.xaml
+1498:                                      SubType=Designer
+1499: >                                    TargetPath=Resources\Styles\Colors2.xaml
+1500: >                            Resources\Styles\Styles2.xaml
+1501: >                                    OriginalItemSpec=Resources\Styles\Styles2.xaml
+---
+1511:                                      OriginalItemSpec=Views\SettingsPage.xaml
+1512:                                      SubType=Designer
+1513:                                      TargetPath=Views\SettingsPage.xaml
+1514: >                            Resources\Styles\Colors2.xaml
+1515: >                                    OriginalItemSpec=Resources\Styles\Colors2.xaml
+1516:                                      SubType=Designer
+---
+1512:                                      SubType=Designer
+1513:                                      TargetPath=Views\SettingsPage.xaml
+1514: >                            Resources\Styles\Colors2.xaml
+1515: >                                    OriginalItemSpec=Resources\Styles\Colors2.xaml
+1516:                                      SubType=Designer
+1517: >                                    TargetPath=Resources\Styles\Colors2.xaml
+---
+1514: >                            Resources\Styles\Colors2.xaml
+1515: >                                    OriginalItemSpec=Resources\Styles\Colors2.xaml
+1516:                                      SubType=Designer
+1517: >                                    TargetPath=Resources\Styles\Colors2.xaml
+1518: >                            Resources\Styles\Styles2.xaml
+1519: >                                    OriginalItemSpec=Resources\Styles\Styles2.xaml
+---
+1529:                                      OriginalItemSpec=AppShell.xaml
+1530:                                      SubType=Designer
+1531:                                      TargetPath=AppShell.xaml
+1532: >                            Resources\Styles\Colors2.xaml
+1533: >                                    OriginalItemSpec=Resources\Styles\Colors2.xaml
+1534:                                      SubType=Designer
+---
+1530:                                      SubType=Designer
+1531:                                      TargetPath=AppShell.xaml
+1532: >                            Resources\Styles\Colors2.xaml
+1533: >                                    OriginalItemSpec=Resources\Styles\Colors2.xaml
+1534:                                      SubType=Designer
+1535: >                                    TargetPath=Resources\Styles\Colors2.xaml
+---
+1532: >                            Resources\Styles\Colors2.xaml
+1533: >                                    OriginalItemSpec=Resources\Styles\Colors2.xaml
+1534:                                      SubType=Designer
+1535: >                                    TargetPath=Resources\Styles\Colors2.xaml
+1536: >                            Resources\Styles\Styles2.xaml
+1537: >                                    OriginalItemSpec=Resources\Styles\Styles2.xaml
+---
+1547:                                      OriginalItemSpec=Views\SettingsPage.xaml
+1548:                                      SubType=Designer
+1549:                                      TargetPath=Views\SettingsPage.xaml
+1550: >                            Resources\Styles\Colors2.xaml
+1551: >                                    OriginalItemSpec=Resources\Styles\Colors2.xaml
+1552:                                      SubType=Designer
+---
+1548:                                      SubType=Designer
+1549:                                      TargetPath=Views\SettingsPage.xaml
+1550: >                            Resources\Styles\Colors2.xaml
+1551: >                                    OriginalItemSpec=Resources\Styles\Colors2.xaml
+1552:                                      SubType=Designer
+1553: >                                    TargetPath=Resources\Styles\Colors2.xaml
+---
+1550: >                            Resources\Styles\Colors2.xaml
+1551: >                                    OriginalItemSpec=Resources\Styles\Colors2.xaml
+1552:                                      SubType=Designer
+1553: >                                    TargetPath=Resources\Styles\Colors2.xaml
+1554: >                            Resources\Styles\Styles2.xaml
+1555: >                                    OriginalItemSpec=Resources\Styles\Styles2.xaml
+---
+1565:                                        OriginalItemSpec=AppShell.xaml
+1566:                                        SubType=Designer
+1567:                                        TargetPath=AppShell.xaml
+1568: >                              Resources\Styles\Colors2.xaml
+1569: >                                      OriginalItemSpec=Resources\Styles\Colors2.xaml
+1570:                                        SubType=Designer
+---
+1566:                                        SubType=Designer
+1567:                                        TargetPath=AppShell.xaml
+1568: >                              Resources\Styles\Colors2.xaml
+1569: >                                      OriginalItemSpec=Resources\Styles\Colors2.xaml
+1570:                                        SubType=Designer
+1571: >                                      TargetPath=Resources\Styles\Colors2.xaml
+---
+1568: >                              Resources\Styles\Colors2.xaml
+1569: >                                      OriginalItemSpec=Resources\Styles\Colors2.xaml
+1570:                                        SubType=Designer
+1571: >                                      TargetPath=Resources\Styles\Colors2.xaml
+1572: >                              Resources\Styles\Styles2.xaml
+1573: >                                      OriginalItemSpec=Resources\Styles\Styles2.xaml
+---
+1583:                                        OriginalItemSpec=Views\SettingsPage.xaml
+1584:                                        SubType=Designer
+1585:                                        TargetPath=Views\SettingsPage.xaml
+1586: >                              Resources\Styles\Colors2.xaml
+1587: >                                      OriginalItemSpec=Resources\Styles\Colors2.xaml
+1588:                                        SubType=Designer
+---
+1584:                                        SubType=Designer
+1585:                                        TargetPath=Views\SettingsPage.xaml
+1586: >                              Resources\Styles\Colors2.xaml
+1587: >                                      OriginalItemSpec=Resources\Styles\Colors2.xaml
+1588:                                        SubType=Designer
+1589: >                                      TargetPath=Resources\Styles\Colors2.xaml
+---
+1586: >                              Resources\Styles\Colors2.xaml
+1587: >                                      OriginalItemSpec=Resources\Styles\Colors2.xaml
+1588:                                        SubType=Designer
+1589: >                                      TargetPath=Resources\Styles\Colors2.xaml
+1590: >                              Resources\Styles\Styles2.xaml
+1591: >                                      OriginalItemSpec=Resources\Styles\Styles2.xaml
+---
+python : Traceback (most recent call last):
+En línea: 1 Carácter: 1
++ python analyze_log.py 2>&1 | Out-File -FilePath "C:\Users\DELL\Docume ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Traceback (most recent call last)::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  File "C:\Users\DELL\.openclaw\workspace\analyze_log.py", line 7, in <module>
+    print(f'{j+1}: {lines[j]}', end='')
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u251c' in position 32: character maps to <undefined>

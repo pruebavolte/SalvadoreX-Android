@@ -180,5 +180,11 @@ namespace SalvadoreXAndroid.Data
 
         public Task MarkSaleSyncedAsync(string id) =>
             _database!.ExecuteAsync("UPDATE sales SET need_sync = 0 WHERE id = ?", id);
+
+        public Task<List<Category>> GetPendingSyncCategoriesAsync() =>
+            _database!.Table<Category>().Where(c => c.NeedSync).ToListAsync();
+
+        public Task MarkCategorySyncedAsync(string id) =>
+            _database!.ExecuteAsync("UPDATE categories SET need_sync = 0 WHERE id = ?", id);
     }
 }

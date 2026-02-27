@@ -1,0 +1,101 @@
+﻿                   Propiedad establecida: _BaseZipIntermediate=obj\Release\net9.0-android\android\bin\base.zip
+                   Propiedad establecida: _AppBundleIntermediate=obj\Release\net9.0-android\android\bin\com.salvadorex.pos.aab
+                   Propiedad establecida: _ApkSetIntermediate=obj\Release\net9.0-android\android\bin\com.salvadorex.pos.apks
+                   Propiedad establecida: _UniversalApkSetIntermediate=obj\Release\net9.0-android\android\bin\com.salvadorex.pos-Universal.apks
+                   Propiedad establecida: ApkFile=bin\Release\net9.0-android\com.salvadorex.pos.apk
+                   Propiedad establecida: ApkFileSigned=bin\Release\net9.0-android\com.salvadorex.pos-Signed.apk
+                   Propiedad establecida: _AabFile=bin\Release\net9.0-android\com.salvadorex.pos.aab
+                   Propiedad establecida: _AabFileSigned=bin\Release\net9.0-android\com.salvadorex.pos-Signed.aab
+                   Propiedad establecida: _MSYMDirectory=bin\Release\net9.0-android\com.salvadorex.pos.apk.mSYM
+22:35:55.113  1:12>CompilaciÔö£Ôöén terminada del destino "_ValidateAndroidPackageProperties" en el proyecto "SalvadoreXAndroid.csproj".: (TargetId:102)
+                   Se omitiÔö£Ôöé el destino "_ResolveMonoAndroidSdks". Compilado previamente de forma correcta.
+                   Se omitiÔö£Ôöé el destino "_ResolveSdks". Compilado previamente de forma correcta.
+                   Se omitiÔö£Ôöé el destino "_ResolveAndroidTooling". Compilado previamente de forma correcta.
+22:35:55.113  1:12>Destino "_InjectAaptDependencies: (TargetId:103)" en el archivo "C:\Program Files\dotnet\packs\Microsoft.Android.Sdk.Windows\35.0.105\tools\Xamarin.Android.Aapt2.targets" del proyecto "C:\Users\DELL\Documents\GitHub\SalvadoreX-Android\SalvadoreXAndroid.csproj" (el destino "_SetLatestTargetFrameworkVersion" depende de Ôö£┬«l):
+                   Propiedad establecida: _SetLatestTargetFrameworkVersionDependsOnTargets=
+                         
+                         _ResolveSdks;
+                         _ResolveAndroidTooling;
+                         _InjectAaptDependencies;
+                       ;
+                         _CreateAapt2VersionCache;
+                       
+                   Propiedad establecida: _PrepareUpdateAndroidResgenDependsOnTargets=
+                         _CompileResources;
+                         _Aapt2UpdateAndroidResgenInputs;
+                         
+                       _IncludeModifiedFilesInUpdateAndroidResgenInputs;
+                     ;
+                       
+                   Propiedad establecida: _AfterConvertCustomView=
+                         ;
+                         _FixupCustomViewsForAapt2;
+                       
+22:35:55.113  1:12>CompilaciÔö£Ôöén terminada del destino "_InjectAaptDependencies" en el proyecto "SalvadoreXAndroid.csproj".: (TargetId:103)
+22:35:55.113  1:12>Destino "_SetLatestTargetFrameworkVersion: (TargetId:104)" en el archivo "C:\Program Files\dotnet\packs\Microsoft.Android.Sdk.Windows\35.0.105\tools\Xamarin.Android.Tooling.targets" del proyecto "C:\Users\DELL\Documents\GitHub\SalvadoreX-Android\SalvadoreXAndroid.csproj" (el destino "_ResolveXamarinAndroidTools" depende de Ôö£┬«l):
+                   Propiedad establecida: TargetFrameworkMoniker=.NETCoreApp,Version=v9.0
+                   Propiedad establecida: NuGetTargetMoniker=.NETCoreApp,Version=v9.0
+                   Propiedad establecida: TargetFrameworkMonikerAssemblyAttributesPath=obj\Release\net9.0-android\.NETCoreApp,Version=v9.0.AssemblyAttributes.cs
+                   Elementos agregados: FileWrites=obj\Release\net9.0-android\.NETCoreApp,Version=v9.0.AssemblyAttributes.cs
+22:35:55.113  1:12>CompilaciÔö£Ôöén terminada del destino "_SetLatestTargetFrameworkVersion" en el proyecto "SalvadoreXAndroid.csproj".: (TargetId:104)
+22:35:55.113  1:12>Destino "_ResolveXamarinAndroidTools: (TargetId:105)" en el archivo "C:\Program Files\dotnet\packs\Microsoft.Android.Sdk.Windows\35.0.105\tools\Xamarin.Android.Common.Debugging.targets" del proyecto "C:\Users\DELL\Documents\GitHub\SalvadoreX-Android\SalvadoreXAndroid.csproj" (el destino "AndroidPrepareForBuild" depende de Ôö£┬«l):
+                   Ensamblado cargado durante TaskRun: Xamarin.Android.Build.Debugging.Tasks, Version=15.0.0.103, Culture=neutral, PublicKeyToken=84e04ff9cfb79065(ubicaciÔö£Ôöén: C:\Program Files\dotnet\packs\Microsoft.Android.Sdk.Windows\35.0.105\tools\Xamarin.Android.Build.Debugging.Tasks.dll, MVID: 642b0d64-83e7-4f86-b5ab-68a064e25f25, AssemblyLoadContext: MSBuild plugin C:\Program Files\dotnet\packs\Microsoft.Android.Sdk.Windows\35.0.105\tools\Xamarin.Android.Build.Debugging.Tasks.dll)
+                   Ensamblado cargado durante TaskRun: Microsoft.Android.Build.BaseTasks, Version=1.0.98.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065(ubicaciÔö£Ôöén: C:\Program Files\dotnet\packs\Microsoft.Android.Sdk.Windows\35.0.105\tools\Microsoft.Android.Build.BaseTasks.dll, MVID: 2d5e211a-43b0-4714-b37b-18d36414fd9d, AssemblyLoadContext: MSBuild plugin C:\Program Files\dotnet\packs\Microsoft.Android.Sdk.Windows\35.0.105\tools\Xamarin.Android.Build.Debugging.Tasks.dll)
+                   Usando la tarea "ResolveXamarinAndroidTools" del ensamblado "C:\Program Files\dotnet\packs\Microsoft.Android.Sdk.Windows\35.0.105\tools\Xamarin.Android.Build.Debugging.Tasks.dll".
+                   Tarea "ResolveXamarinAndroidTools" (TaskId:109)
+                     ParÔö£├¡metro de tarea:MonoAndroidToolsPath=C:\Program Files\dotnet\packs\Microsoft.Android.Sdk.Windows\35.0.105\tools (TaskId:109)
+                     ParÔö£├¡metro de tarea:
+                         ReferenceAssemblyPaths=
+                             C:\Users\DELL\.nuget\packages\microsoft.netcore.app.ref\9.0.13\ref\net9.0
+                             C:\Program Files\dotnet\packs\Microsoft.Android.Ref.35\35.0.105\ref\net9.0 (TaskId:109)
+                     ParÔö£├¡metro de tarea:MonoAndroidBinDirectory=C:\Program Files\dotnet\packs\Microsoft.Android.Sdk.Windows\35.0.105\tools\ (TaskId:109)
+                     ParÔö£├¡metro de tarea:AndroidSdkPath=C:\Program Files (x86)\Android\android-sdk\ (TaskId:109)
+                     ParÔö£├¡metro de tarea:JavaSdkPath=C:\Program Files (x86)\Android\openjdk\jdk-17.0.12\ (TaskId:109)
+                     Ensamblado cargado durante TaskRun (Xamarin.Android.Tasks.ResolveXamarinAndroidTools): Mono.AndroidTools, Version=1.1.15.0, Culture=neutral, PublicKeyToken=0cb85e4f39dfce87(ubicaciÔö£Ôöén: C:\Program Files\dotnet\packs\Microsoft.Android.Sdk.Windows\35.0.105\tools\Mono.AndroidTools.dll, MVID: 5ec68240-c2fb-4dce-85c2-b7b4d793e22c, AssemblyLoadContext: MSBuild plugin C:\Program Files\dotnet\packs\Microsoft.Android.Sdk.Windows\35.0.105\tools\Xamarin.Android.Build.Debugging.Tasks.dll) (TaskId:109)
+                     Ensamblado cargado durante TaskRun (Xamarin.Android.Tasks.ResolveXamarinAndroidTools): Xamarin.AndroidTools, Version=1.1.15.0, Culture=neutral, PublicKeyToken=87f7c026dcad9390(ubicaciÔö£Ôöén: C:\Program Files\dotnet\packs\Microsoft.Android.Sdk.Windows\35.0.105\tools\Xamarin.AndroidTools.dll, MVID: b2c00eb6-2595-484c-9283-c9f10abb2a35, AssemblyLoadContext: MSBuild plugin C:\Program Files\dotnet\packs\Microsoft.Android.Sdk.Windows\35.0.105\tools\Xamarin.Android.Build.Debugging.Tasks.dll) (TaskId:109)
+                     Ensamblado cargado durante TaskRun (Xamarin.Android.Tasks.ResolveXamarinAndroidTools): Xamarin.Android.Tools.AndroidSdk, Version=1.0.98.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065(ubicaciÔö£Ôöén: C:\Program Files\dotnet\packs\Microsoft.Android.Sdk.Windows\35.0.105\tools\Xamarin.Android.Tools.AndroidSdk.dll, MVID: 1f5ee464-636b-4df0-be59-742711202394, AssemblyLoadContext: MSBuild plugin C:\Program Files\dotnet\packs\Microsoft.Android.Sdk.Windows\35.0.105\tools\Xamarin.Android.Build.Debugging.Tasks.dll) (TaskId:109)
+                     DEBUG  ValidateAndroidSdkLocation: for locator=constructor param, path=`C:\Program Files (x86)\Android\android-sdk\`, found adb `C:\Program Files (x86)\Android\android-sdk\platform-tools\adb.EXE` (TaskId:109)
+                     DEBUG  ValidateAndroidSdkLocation: for locator=constructor param, path=`C:\Program Files (x86)\Android\android-sdk\`, result=True (TaskId:109)
+                     DEBUG  ValidateJavaSdkLocation: for locator=constructor param, path=`C:\Program Files (x86)\Android\openjdk\jdk-17.0.12\`, found jarsigner `C:\Program Files (x86)\Android\openjdk\jdk-17.0.12\bin\jarsigner.EXE` (TaskId:109)
+                     DEBUG  ValidateJavaSdkLocation: for locator=constructor param, path=`C:\Program Files (x86)\Android\openjdk\jdk-17.0.12\`, found jarsigner `C:\Program Files (x86)\Android\openjdk\jdk-17.0.12\bin\jarsigner.exe` (TaskId:109)
+                     DEBUG  ValidateJavaSdkLocation: locator=constructor param, path=`C:\Program Files (x86)\Android\openjdk\jdk-17.0.12\`, result=True (TaskId:109)
+                     DEBUG  ValidateAndroidNdkLocation: for locator=constructor param, path=``, result=False (TaskId:109)
+                     DEBUG  ValidateAndroidNdkLocation: for locator=preferred path, path=``, result=False (TaskId:109)
+                      Looking for Android NDK... (TaskId:109)
+                      Looking for Android SDK... (TaskId:109)
+                       Found AndroidSdk at C:\Program Files (x86)\Android\android-sdk\ (TaskId:109)
+                       Found AndroidNdk at  (TaskId:109)
+                       Found AndroidTools at C:\Program Files (x86)\Android\android-sdk\cmdline-tools\12.0,C:\Program Files (x86)\Android\android-sdk\cmdline-tools\11.0 (TaskId:109)
+                     DEBUG  $(MonoAndroidToolsDirectory) path `C:\Program Files\dotnet\packs\Microsoft.Android.Sdk.Windows\35.0.105\tools` is valid (TaskId:109)
+                     DEBUG  $(MonoAndroidBinDirectory) path `C:\Program Files\dotnet\packs\Microsoft.Android.Sdk.Windows\35.0.105\tools\` is valid (TaskId:109)
+                     DEBUG  mscorlib.dll path `C:\Users\DELL\.nuget\packages\microsoft.netcore.app.ref\9.0.13\ref\net9.0` is valid (TaskId:109)
+                     DEBUG  GetSdkPath `C:\Program Files\dotnet\packs\Microsoft.Android.Sdk.Windows\Version.txt` exists=False  (TaskId:109)
+                     DEBUG  GetSdkPath `C:\Program Files\dotnet\packs\Microsoft.Android.Sdk.Windows\Version` exists=False  (TaskId:109)
+                     DEBUG  GetSdkPath `C:\Program Files\Version.txt` exists=False  (TaskId:109)
+                     DEBUG  GetSdkPath `C:\Program Files\Version` exists=False  (TaskId:109)
+                     DEBUG  GetSdkPath `C:\Program Files\dotnet\packs\Microsoft.Android.Sdk.Windows\35.0.105\tools\Version.txt` exists=False  (TaskId:109)
+                     DEBUG  GetSdkPath `C:\Program Files\dotnet\packs\Microsoft.Android.Sdk.Windows\35.0.105\tools\Version` exists=True  (TaskId:109)
+                     DEBUG  FindVersionFile: C:\Program Files\dotnet\packs\Microsoft.Android.Sdk.Windows\35.0.105\tools\Version, result=True (TaskId:109)
+                      Found Xamarin.Android 15.0.0.7 (TaskId:109)
+                       Found RuntimePath at C:\Program Files\dotnet\packs\Microsoft.Android.Sdk.Windows\35.0.105\tools (TaskId:109)
+                       Found FrameworkPath at C:\Users\DELL\.nuget\packages\microsoft.netcore.app.ref\9.0.13\ref\net9.0 (TaskId:109)
+                   EjecuciÔö£Ôöén de la tarea "ResolveXamarinAndroidTools" terminada. (TaskId:109)
+22:35:55.227  1:12>CompilaciÔö£Ôöén terminada del destino "_ResolveXamarinAndroidTools" en el proyecto "SalvadoreXAndroid.csproj".: (TargetId:105)
+22:35:55.227  1:12>Destino "AndroidPrepareForBuild: (TargetId:106)" en el archivo "C:\Program Files\dotnet\packs\Microsoft.Android.Sdk.Windows\35.0.105\tools\Xamarin.Android.Common.targets" del proyecto "C:\Users\DELL\Documents\GitHub\SalvadoreX-Android\SalvadoreXAndroid.csproj" (el destino "Build" depende de Ôö£┬«l):
+22:35:55.227  1:12>CompilaciÔö£Ôöén terminada del destino "AndroidPrepareForBuild" en el proyecto "SalvadoreXAndroid.csproj".: (TargetId:106)
+                   Se omitiÔö£Ôöé el destino "_BuildAndroidGradleProjects" debido a una condiciÔö£Ôöén falsa (False); ( '@(AndroidGradleProject->Count())' != '0' ) se evaluÔö£Ôöé como ( '0' != '0' ).
+                   Se omitiÔö£Ôöé el destino "_MavenRestore" debido a una condiciÔö£Ôöén falsa (False); ( '@(AndroidMavenLibrary->Count())' != '0' ) se evaluÔö£Ôöé como ( '0' != '0' ).
+                   Se omitiÔö£Ôöé el destino "_VerifyJavaDependencies" debido a una condiciÔö£Ôöén falsa (False); ( '@(AndroidLibrary->Count())' != '0' ) se evaluÔö£Ôöé como ( '0' != '0' ).
+22:35:55.228  1:12>Destino "_CategorizeAndroidLibraries: (TargetId:107)" en el archivo "C:\Program Files\dotnet\packs\Microsoft.Android.Sdk.Windows\35.0.105\tools\Xamarin.Android.AvailableItems.targets" del proyecto "C:\Users\DELL\Documents\GitHub\SalvadoreX-Android\SalvadoreXAndroid.csproj" (el destino "Build" depende de Ôö£┬«l):
+22:35:55.229  1:12>CompilaciÔö£Ôöén terminada del destino "_CategorizeAndroidLibraries" en el proyecto "SalvadoreXAndroid.csproj".: (TargetId:107)
+                   Se omitiÔö£Ôöé el destino "_SetupDesignTimeBuildForBuild". Compilado previamente de forma correcta.
+                   Se omitiÔö£Ôöé el destino "_SetLatestTargetFrameworkVersion". Compilado previamente de forma correcta.
+                   Se omitiÔö£Ôöé el destino "_ResolveMonoAndroidSdks". Compilado previamente de forma correcta.
+22:35:55.229  1:12>Destino "_CreatePropertiesCache: (TargetId:108)" en el archivo "C:\Program Files\dotnet\packs\Microsoft.Android.Sdk.Windows\35.0.105\tools\Xamarin.Android.Common.targets" del proyecto "C:\Users\DELL\Documents\GitHub\SalvadoreX-Android\SalvadoreXAndroid.csproj" (el destino "Build" depende de Ôö£┬«l):
+                   Propiedad establecida: AndroidAddKeepAlives=True
+                   Propiedad establecida: AndroidLinkResources=False
+                   Propiedad establecida: _AndroidBuildPropertiesCacheExists=True
+                   Propiedad establecida: _NuGetAssetsFile=C:\Users\DELL\Documents\GitHub\SalvadoreX-Android\obj\project.assets.json
+                   Propiedad establecida: _TypeMapKind=mvid
+                   Usando la tarea "GetFileHash" del ensamblado "Microsoft.Build.Tasks.Core, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a".
+

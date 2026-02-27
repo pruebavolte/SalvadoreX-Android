@@ -3,9 +3,14 @@ using Android.OS;
 using Android.Webkit;
 using Android.Views;
 using Android.Content.PM;
-using SalvadoreXPOS.Services;
+using Android.Runtime;
+using Java.Interop;
+using Newtonsoft.Json;
+using SalvadoreXAndroid.Services;
+using SalvadoreXAndroid.Data;
+using SalvadoreXAndroid.Models;
 
-namespace SalvadoreXPOS;
+namespace SalvadoreXAndroid;
 
 [Activity(
     Label = "SalvadoreX POS",
@@ -13,10 +18,10 @@ namespace SalvadoreXPOS;
     Theme = "@android:style/Theme.Material.Light.NoActionBar",
     ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation | ConfigChanges.UiMode,
     ScreenOrientation = ScreenOrientation.Portrait)]
-public class MainActivity : Activity
+public class MainActivity : MauiAppCompatActivity
 {
     private Android.Webkit.WebView? _webView;
-    private DatabaseService? _db;
+    private Data.DatabaseService? _db;
     private SyncService? _sync;
     private LicensingService? _licensing;
     
@@ -28,11 +33,11 @@ public class MainActivity : Activity
         Window?.SetFlags(WindowManagerFlags.Fullscreen, WindowManagerFlags.Fullscreen);
         
         // Initialize services
-        _db = new DatabaseService(this);
+        _db = new DatabaseService();
         await _db.InitializeAsync();
         
         _sync = new SyncService(_db);
-        _licensing = new LicensingService(this);
+        _licensing = new LicensingService();
         
         // Verify license
         if (!_licensing.ValidateLicense())
@@ -42,7 +47,7 @@ public class MainActivity : Activity
         }
         
         // Create WebView
-        _webView = new WebView(this);
+        _webView = new Android.Webkit.WebView(this);
         _webView.Settings.JavaScriptEnabled = true;
         _webView.Settings.DomStorageEnabled = true;
         _webView.Settings.AllowFileAccess = true;
@@ -98,7 +103,7 @@ public class NativeBridge : Java.Lang.Object
     private readonly SyncService _sync;
     private readonly LicensingService _licensing;
     
-    public NativeBridge(DatabaseService db, SyncService sync, LicensingService licensing)
+    public NativeBridge(Data.DatabaseService db, SyncService sync, LicensingService licensing)
     {
         _db = db;
         _sync = sync;
@@ -106,46 +111,70 @@ public class NativeBridge : Java.Lang.Object
     }
     
     [JavascriptInterface]
-    [Android.Runtime.Export("isOffline")]
+    [Export("isOffline")]
     public bool IsOffline() => !_sync.IsOnline;
     
     [JavascriptInterface]
-    [Android.Runtime.Export("getProducts")]
-    public string GetProducts() => _db.GetProductsAsync().GetAwaiter().GetResult();
+    [Export("getProducts")]
+    public string GetProducts() 
+    {
+        var products = _db.GetProductsAsync().GetAwaiter().GetResult();
+        return JsonConvert.SerializeObject(products);
+    }
     
     [JavascriptInterface]
-    [Android.Runtime.Export("saveProduct")]
-    public void SaveProduct(string json) => _db.SaveProductAsync(json).GetAwaiter().GetResult();
+    [Export("saveProduct")]
+    public void SaveProduct(string json) 
+    {
+        var product = JsonConvert.DeserializeObject<Product>(json);
+        _db.SaveProductAsync(product).GetAwaiter().GetResult();
+    }
     
     [JavascriptInterface]
-    [Android.Runtime.Export("getCustomers")]
-    public string GetCustomers() => _db.GetCustomersAsync().GetAwaiter().GetResult();
+    [Export("getCustomers")]
+    public string GetCustomers() 
+    {
+        var customers = _db.GetCustomersAsync().GetAwaiter().GetResult();
+        return JsonConvert.SerializeObject(customers);
+    }
     
     [JavascriptInterface]
-    [Android.Runtime.Export("saveCustomer")]
-    public void SaveCustomer(string json) => _db.SaveCustomerAsync(json).GetAwaiter().GetResult();
+    [Export("saveCustomer")]
+    public void SaveCustomer(string json) 
+    {
+        var customer = JsonConvert.DeserializeObject<Customer>(json);
+        _db.SaveCustomerAsync(customer).GetAwaiter().GetResult();
+    }
     
     [JavascriptInterface]
-    [Android.Runtime.Export("getSales")]
-    public string GetSales() => _db.GetSalesAsync().GetAwaiter().GetResult();
+    [Export("getSales")]
+    public string GetSales() 
+    {
+        var sales = _db.GetSalesAsync().GetAwaiter().GetResult();
+        return JsonConvert.SerializeObject(sales);
+    }
     
     [JavascriptInterface]
-    [Android.Runtime.Export("saveSale")]
-    public void SaveSale(string json) => _db.SaveSaleAsync(json).GetAwaiter().GetResult();
+    [Export("saveSale")]
+    public void SaveSale(string json) 
+    {
+        var sale = JsonConvert.DeserializeObject<Sale>(json);
+        _db.SaveSaleAsync(sale, sale.Items).GetAwaiter().GetResult();
+    }
     
     [JavascriptInterface]
-    [Android.Runtime.Export("getSetting")]
+    [Export("getSetting")]
     public string GetSetting(string key) => _db.GetSettingAsync(key).GetAwaiter().GetResult();
     
     [JavascriptInterface]
-    [Android.Runtime.Export("setSetting")]
+    [Export("setSetting")]
     public void SetSetting(string key, string value) => _db.SetSettingAsync(key, value).GetAwaiter().GetResult();
     
     [JavascriptInterface]
-    [Android.Runtime.Export("syncNow")]
+    [Export("syncNow")]
     public void SyncNow() => _sync.ForceSyncNowAsync().GetAwaiter().GetResult();
     
     [JavascriptInterface]
-    [Android.Runtime.Export("getHardwareId")]
+    [Export("getHardwareId")]
     public string GetHardwareId() => _licensing.GetHardwareId();
 }

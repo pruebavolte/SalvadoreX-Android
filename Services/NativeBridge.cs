@@ -1,4 +1,7 @@
 using System.Runtime.InteropServices;
+using Newtonsoft.Json;
+using SalvadoreXAndroid.Data;
+using SalvadoreXAndroid.Models;
 
 namespace SalvadoreXAndroid.Services;
 
@@ -6,11 +9,11 @@ namespace SalvadoreXAndroid.Services;
 [ComVisible(true)]
 public class NativeBridge
 {
-    private readonly DatabaseService _db;
+    private readonly Data.DatabaseService _db;
     private readonly SyncService _sync;
     private readonly LicensingService _licensing;
     
-    public NativeBridge(DatabaseService db, SyncService sync)
+    public NativeBridge(Data.DatabaseService db, SyncService sync)
     {
         _db = db;
         _sync = sync;
@@ -21,32 +24,38 @@ public class NativeBridge
     
     public string GetProducts()
     {
-        return _db.GetProductsAsync().GetAwaiter().GetResult();
+        var products = _db.GetProductsAsync().GetAwaiter().GetResult();
+        return JsonConvert.SerializeObject(products);
     }
     
     public void SaveProduct(string json)
     {
-        _db.SaveProductAsync(json).GetAwaiter().GetResult();
+        var product = JsonConvert.DeserializeObject<Product>(json);
+        _db.SaveProductAsync(product).GetAwaiter().GetResult();
     }
     
     public string GetCustomers()
     {
-        return _db.GetCustomersAsync().GetAwaiter().GetResult();
+        var customers = _db.GetCustomersAsync().GetAwaiter().GetResult();
+        return JsonConvert.SerializeObject(customers);
     }
     
     public void SaveCustomer(string json)
     {
-        _db.SaveCustomerAsync(json).GetAwaiter().GetResult();
+        var customer = JsonConvert.DeserializeObject<Customer>(json);
+        _db.SaveCustomerAsync(customer).GetAwaiter().GetResult();
     }
     
     public string GetSales()
     {
-        return _db.GetSalesAsync().GetAwaiter().GetResult();
+        var sales = _db.GetSalesAsync().GetAwaiter().GetResult();
+        return JsonConvert.SerializeObject(sales);
     }
     
     public void SaveSale(string json)
     {
-        _db.SaveSaleAsync(json).GetAwaiter().GetResult();
+        var sale = JsonConvert.DeserializeObject<Sale>(json);
+        _db.SaveSaleAsync(sale, sale.Items).GetAwaiter().GetResult();
     }
     
     public string GetSetting(string key)
@@ -71,11 +80,13 @@ public class NativeBridge
     
     public string GetCategories()
     {
-        return _db.GetCategoriesAsync().GetAwaiter().GetResult();
+        var categories = _db.GetCategoriesAsync().GetAwaiter().GetResult();
+        return JsonConvert.SerializeObject(categories);
     }
     
     public void SaveCategory(string json)
     {
-        _db.SaveCategoryAsync(json).GetAwaiter().GetResult();
+        var category = JsonConvert.DeserializeObject<Category>(json);
+        _db.SaveCategoryAsync(category).GetAwaiter().GetResult();
     }
 }

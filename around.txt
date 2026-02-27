@@ -1,0 +1,23 @@
+﻿61251:                    Propiedad establecida: _BaseZipIntermediate=obj\Release\net9.0-android\android\bin\base.zip
+61252:                    Propiedad establecida: _AppBundleIntermediate=obj\Release\net9.0-android\android\bin\com.salvadorex.pos.aab
+61253:                    Propiedad establecida: _ApkSetIntermediate=obj\Release\net9.0-android\android\bin\com.salvadorex.pos.apks
+61254:                    Propiedad establecida: _UniversalApkSetIntermediate=obj\Release\net9.0-android\android\bin\com.salvadorex.pos-Universal.apks
+61255:                    Propiedad establecida: ApkFile=bin\Release\net9.0-android\com.salvadorex.pos.apk
+61256:                    Propiedad establecida: ApkFileSigned=bin\Release\net9.0-android\com.salvadorex.pos-Signed.apk
+61257:                    Propiedad establecida: _AabFile=bin\Release\net9.0-android\com.salvadorex.pos.aab
+61258:                    Propiedad establecida: _AabFileSigned=bin\Release\net9.0-android\com.salvadorex.pos-Signed.aab
+61259:                    Propiedad establecida: _MSYMDirectory=bin\Release\net9.0-android\com.salvadorex.pos.apk.mSYM
+python : Traceback (most recent call last):
+En línea: 1 Carácter: 1
++ python around_apk.py 2>&1 | Out-File -FilePath "C:\Users\DELL\Documen ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Traceback (most recent call last)::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  File "C:\Users\DELL\.openclaw\workspace\around_apk.py", line 6, in <module>
+    print(f'{i+1}: {lines[i]}', end='')
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode characters in position 35-36: character maps to <undefined>

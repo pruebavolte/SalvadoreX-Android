@@ -1,6 +1,7 @@
 using Microsoft.Extensions.Logging;
 using SalvadoreXAndroid.Data;
 using SalvadoreXAndroid.Services;
+using SalvadoreXAndroid.ViewModels;
 using SalvadoreXAndroid.Views;
 
 namespace SalvadoreXAndroid;
@@ -19,7 +20,7 @@ public static class MauiProgram
             });
 
         // Register services
-        builder.Services.AddSingleton<DatabaseService>();
+        builder.Services.AddSingleton<SalvadoreXAndroid.Data.DatabaseService>();
         builder.Services.AddSingleton<SyncService>();
         
         // Register ViewModels

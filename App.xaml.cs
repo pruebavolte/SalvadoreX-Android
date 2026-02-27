@@ -5,7 +5,7 @@ namespace SalvadoreXAndroid;
 
 public partial class App : Application
 {
-    public App(DatabaseService databaseService, SyncService syncService)
+    public App(SalvadoreXAndroid.Data.DatabaseService databaseService, SyncService syncService)
     {
         InitializeComponent();
         

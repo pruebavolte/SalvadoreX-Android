@@ -1,0 +1,5 @@
+﻿  SalvadoreXAndroid -> C:\Users\DELL\Documents\GitHub\SalvadoreX-Android\bin\Release\net9.0-android\SalvadoreXAndroid.dll
+  Al optimizar el tama├▒o de los ensamblados, es posible que cambie el comportamiento de la aplicaci├│n. Aseg├║rese de probarla despu├®s de su publicaci├│n. Visite https://aka.ms/dotnet-illink
+  Optimizaci├│n del tama├▒o de los ensamblados. Este proceso puede tardar un momento.
+  Al optimizar el tama├▒o de los ensamblados, es posible que cambie el comportamiento de la aplicaci├│n. Aseg├║rese de probarla despu├®s de su publicaci├│n. Visite https://aka.ms/dotnet-illink
+  Optimizaci├│n del tama├▒o de los ensamblados. Este proceso puede tardar un momento.

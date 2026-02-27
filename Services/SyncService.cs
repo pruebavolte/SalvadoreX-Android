@@ -1,11 +1,13 @@
 using System.Net.Http.Json;
 using Newtonsoft.Json;
+using SalvadoreXAndroid.Data;
+using SalvadoreXAndroid.Models;
 
 namespace SalvadoreXAndroid.Services;
 
 public class SyncService
 {
-    private readonly DatabaseService _db;
+    private readonly SalvadoreXAndroid.Data.DatabaseService _db;
     private CancellationTokenSource? _cts;
     private readonly int _syncIntervalSeconds = 30;
     
@@ -15,7 +17,7 @@ public class SyncService
     
     public event EventHandler<string>? StatusChanged;
 
-    public SyncService(DatabaseService db)
+    public SyncService(SalvadoreXAndroid.Data.DatabaseService db)
     {
         _db = db;
     }
@@ -104,14 +106,15 @@ public class SyncService
             {
                 try
                 {
-                    product.Remove("need_sync");
-                    var json = JsonConvert.SerializeObject(product);
+                    var dict = JsonConvert.DeserializeObject<Dictionary<string, object>>(JsonConvert.SerializeObject(product));
+                    dict.Remove("need_sync");
+                    var json = JsonConvert.SerializeObject(dict);
                     var content = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
                     var response = await client.PostAsync($"{supabaseUrl}/rest/v1/products", content);
                     
                     if (response.IsSuccessStatusCode)
                     {
-                        await _db.MarkProductSyncedAsync(product["id"]?.ToString()!);
+                        await _db.MarkProductSyncedAsync(product.Id);
                         syncedCount++;
                     }
                     else
@@ -134,14 +137,15 @@ public class SyncService
             {
                 try
                 {
-                    sale.Remove("need_sync");
-                    var json = JsonConvert.SerializeObject(sale);
+                    var dict = JsonConvert.DeserializeObject<Dictionary<string, object>>(JsonConvert.SerializeObject(sale));
+                    dict.Remove("need_sync");
+                    var json = JsonConvert.SerializeObject(dict);
                     var content = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
                     var response = await client.PostAsync($"{supabaseUrl}/rest/v1/sales", content);
                     
                     if (response.IsSuccessStatusCode)
                     {
-                        await _db.MarkSaleSyncedAsync(sale["id"]?.ToString()!);
+                        await _db.MarkSaleSyncedAsync(sale.Id);
                         syncedCount++;
                     }
                     else
@@ -161,14 +165,15 @@ public class SyncService
             {
                 try
                 {
-                    customer.Remove("need_sync");
-                    var json = JsonConvert.SerializeObject(customer);
+                    var dict = JsonConvert.DeserializeObject<Dictionary<string, object>>(JsonConvert.SerializeObject(customer));
+                    dict.Remove("need_sync");
+                    var json = JsonConvert.SerializeObject(dict);
                     var content = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
                     var response = await client.PostAsync($"{supabaseUrl}/rest/v1/customers", content);
                     
                     if (response.IsSuccessStatusCode)
                     {
-                        await _db.MarkCustomerSyncedAsync(customer["id"]?.ToString()!);
+                        await _db.MarkCustomerSyncedAsync(customer.Id);
                         syncedCount++;
                     }
                 }
@@ -181,14 +186,15 @@ public class SyncService
             {
                 try
                 {
-                    category.Remove("need_sync");
-                    var json = JsonConvert.SerializeObject(category);
+                    var dict = JsonConvert.DeserializeObject<Dictionary<string, object>>(JsonConvert.SerializeObject(category));
+                    dict.Remove("need_sync");
+                    var json = JsonConvert.SerializeObject(dict);
                     var content = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
                     var response = await client.PostAsync($"{supabaseUrl}/rest/v1/categories", content);
                     
                     if (response.IsSuccessStatusCode)
                     {
-                        await _db.MarkCategorySyncedAsync(category["id"]?.ToString()!);
+                        await _db.MarkCategorySyncedAsync(category.Id);
                         syncedCount++;
                     }
                 }
